@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[Licensing.sln]
+SCC_Aux_Path = "\\platter\company\iad\vss"
+SCC_Project_Name = "$/LMSNew/LMSArubaV1/LMS5.0", FUHEAAAA
+
+[LMS5.0.sln]
+SCC_Aux_Path = "\\platter\company\iad\vss"
+SCC_Project_Name = "$/LMSNew/LMSAruba", PVCEAAAA

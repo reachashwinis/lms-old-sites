@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://iadsvc02/ALEWS/ALE.asmx?wsdl" docRef="http://iadsvc02/ALEWS/ALE.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://iadsvc02/ALEWS/ALE.asmx" xmlns:q1="ALEWS" binding="q1:ALESoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://iadsvc02/ALEWS/ALE.asmx" xmlns:q2="ALEWS" binding="q2:ALESoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

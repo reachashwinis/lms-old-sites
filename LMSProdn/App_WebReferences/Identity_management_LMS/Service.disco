@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://dev-ssows.arubanetworks.com/DEV/IdentityManagementService/Service.asmx?wsdl" docRef="https://dev-ssows.arubanetworks.com/DEV/IdentityManagementService/Service.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://dev-ssows.arubanetworks.com/DEV/IdentityManagementService/Service.asmx" xmlns:q1="Com.Arubanetworks.IdentityManagementService" binding="q1:IdentitymanagementServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://dev-ssows.arubanetworks.com/DEV/IdentityManagementService/Service.asmx" xmlns:q2="Com.Arubanetworks.IdentityManagementService" binding="q2:IdentitymanagementServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

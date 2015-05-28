@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="AmigopodWS" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="AmigopodWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="AmigopodWS">
+      <s:element name="ProcessAmgEval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="advertising_plugin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessAmgEvalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessAmgEvalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessClpEval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="do_enterprise" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="do_policy_manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="do_guestconnect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="disabled" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="policy_manager_licenseType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enterprise_licenseType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessClpEvalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessClpEvalResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AmigopodXML">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="warning" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subscription_key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xmlparse_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="license" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expiretime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sms_credit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sms_handler" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sms_count" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="so" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="po" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="create_time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="high_availability_key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnt_guest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnt_onboard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="adv_feature_msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="high_availability_msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cust_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orig_sku" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sku_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enterprise" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="policy_manager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strclsLic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrclsLicense" type="tns:ArrayOfClsLicense" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClsLicense">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsLicense" nillable="true" type="tns:clsLicense" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsLicense">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="part_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="license_key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="created_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expiry_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orig_sku" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sku_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="part_desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_users" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProcessSubscription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="do_get" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessSubscriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessSubscriptionResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscriptionKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="license" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="disabled" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="advertising_plugin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="po" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="so" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="do_guestconnect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscriptionKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubscriptionKeyResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpgradeLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="license" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpgradeLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpgradeLicenseResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHighAvailabily">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HighAvailability" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHighAvailabilyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddHighAvailabilyResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessQuickConnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessQuickConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessQuickConnectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPolicyManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoPolicy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyUserCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPolicyManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPolicyManagerResult" type="tns:AvendaXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AvendaXML">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="warning" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xmlparse_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="license" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expiretime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="so" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="po" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="create_time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="high_availability_key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="customer_sku_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="quick_connect_key" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddQuickConnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoQuickConnect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuickConnectCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuickConnectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuickConnectExpiry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddQuickConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddQuickConnectResult" type="tns:AvendaXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOnBoardLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OnBoardLicense" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOnBoardLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOnBoardLicenseResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeserializeResult">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeserializeResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeserializeResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAdvertising">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="advertising_plugin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAdvertisingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAdvertisingResult" type="tns:AmigopodXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAvendaLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cust_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avenda_sku" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productSKU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numUsers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenseType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numYears" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAvendaLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAvendaLicenseResult" type="tns:AvendaXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAvendaLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cust_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orig_sku" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avenda_sku" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regenerate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subscription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productSKU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numUsers_add" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenseType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numYears" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAvendaLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditAvendaLicenseResult" type="tns:AvendaXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="AmigopodXML" nillable="true" type="tns:AmigopodXML" />
+      <s:element name="AvendaXML" nillable="true" type="tns:AvendaXML" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessAmgEvalSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessAmgEval" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAmgEvalSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessAmgEvalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessClpEvalSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessClpEval" />
+  </wsdl:message>
+  <wsdl:message name="ProcessClpEvalSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessClpEvalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSubscriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessSubscription" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSubscriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionKey" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpgradeLicense" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpgradeLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHighAvailabilySoapIn">
+    <wsdl:part name="parameters" element="tns:AddHighAvailabily" />
+  </wsdl:message>
+  <wsdl:message name="AddHighAvailabilySoapOut">
+    <wsdl:part name="parameters" element="tns:AddHighAvailabilyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessQuickConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessQuickConnect" />
+  </wsdl:message>
+  <wsdl:message name="ProcessQuickConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessQuickConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPolicyManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPolicyManager" />
+  </wsdl:message>
+  <wsdl:message name="AddPolicyManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPolicyManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddQuickConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddQuickConnect" />
+  </wsdl:message>
+  <wsdl:message name="AddQuickConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddQuickConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOnBoardLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOnBoardLicense" />
+  </wsdl:message>
+  <wsdl:message name="AddOnBoardLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOnBoardLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeserializeResultSoapIn">
+    <wsdl:part name="parameters" element="tns:DeserializeResult" />
+  </wsdl:message>
+  <wsdl:message name="DeserializeResultSoapOut">
+    <wsdl:part name="parameters" element="tns:DeserializeResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAdvertisingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAdvertising" />
+  </wsdl:message>
+  <wsdl:message name="AddAdvertisingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAdvertisingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAvendaLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAvendaLicense" />
+  </wsdl:message>
+  <wsdl:message name="AddAvendaLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAvendaLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditAvendaLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:EditAvendaLicense" />
+  </wsdl:message>
+  <wsdl:message name="EditAvendaLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:EditAvendaLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAmgEvalHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="advertising_plugin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAmgEvalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessClpEvalHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="do_enterprise" type="s:string" />
+    <wsdl:part name="do_policy_manager" type="s:string" />
+    <wsdl:part name="do_guestconnect" type="s:string" />
+    <wsdl:part name="disabled" type="s:string" />
+    <wsdl:part name="policy_manager_licenseType" type="s:string" />
+    <wsdl:part name="enterprise_licenseType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessClpEvalHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSubscriptionHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="do_get" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSubscriptionHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionKeyHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="license" type="s:string" />
+    <wsdl:part name="disabled" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="advertising_plugin" type="s:string" />
+    <wsdl:part name="po" type="s:string" />
+    <wsdl:part name="so" type="s:string" />
+    <wsdl:part name="do_guestconnect" type="s:string" />
+    <wsdl:part name="sku_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionKeyHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeLicenseHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="license" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeLicenseHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="AddHighAvailabilyHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="HighAvailability" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHighAvailabilyHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="ProcessQuickConnectHttpGetIn">
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="custName" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userCount" type="s:string" />
+    <wsdl:part name="expiryDate" type="s:string" />
+    <wsdl:part name="Action" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessQuickConnectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPolicyManagerHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="DoPolicy" type="s:string" />
+    <wsdl:part name="PolicyUserCount" type="s:string" />
+    <wsdl:part name="PolicyType" type="s:string" />
+    <wsdl:part name="PolicyVersion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPolicyManagerHttpGetOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="AddQuickConnectHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="DoQuickConnect" type="s:string" />
+    <wsdl:part name="QuickConnectCount" type="s:string" />
+    <wsdl:part name="QuickConnectType" type="s:string" />
+    <wsdl:part name="QuickConnectExpiry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddQuickConnectHttpGetOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="AddOnBoardLicenseHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="OnBoardLicense" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOnBoardLicenseHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="DeserializeResultHttpGetIn" />
+  <wsdl:message name="DeserializeResultHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAdvertisingHttpGetIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="advertising_plugin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAdvertisingHttpGetOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="AddAvendaLicenseHttpGetIn">
+    <wsdl:part name="cust_id" type="s:string" />
+    <wsdl:part name="avenda_sku" type="s:string" />
+    <wsdl:part name="productName" type="s:string" />
+    <wsdl:part name="sku_id" type="s:string" />
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="productVersion" type="s:string" />
+    <wsdl:part name="productSKU" type="s:string" />
+    <wsdl:part name="numUsers" type="s:string" />
+    <wsdl:part name="licenseType" type="s:string" />
+    <wsdl:part name="numYears" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAvendaLicenseHttpGetOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="EditAvendaLicenseHttpGetIn">
+    <wsdl:part name="cust_id" type="s:string" />
+    <wsdl:part name="orig_sku" type="s:string" />
+    <wsdl:part name="avenda_sku" type="s:string" />
+    <wsdl:part name="productName" type="s:string" />
+    <wsdl:part name="sku_id" type="s:string" />
+    <wsdl:part name="regenerate" type="s:string" />
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="productVersion" type="s:string" />
+    <wsdl:part name="productSKU" type="s:string" />
+    <wsdl:part name="numUsers_add" type="s:string" />
+    <wsdl:part name="licenseType" type="s:string" />
+    <wsdl:part name="numYears" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditAvendaLicenseHttpGetOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAmgEvalHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="advertising_plugin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAmgEvalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessClpEvalHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="do_enterprise" type="s:string" />
+    <wsdl:part name="do_policy_manager" type="s:string" />
+    <wsdl:part name="do_guestconnect" type="s:string" />
+    <wsdl:part name="disabled" type="s:string" />
+    <wsdl:part name="policy_manager_licenseType" type="s:string" />
+    <wsdl:part name="enterprise_licenseType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessClpEvalHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSubscriptionHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="do_get" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSubscriptionHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionKeyHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="license" type="s:string" />
+    <wsdl:part name="disabled" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="advertising_plugin" type="s:string" />
+    <wsdl:part name="po" type="s:string" />
+    <wsdl:part name="so" type="s:string" />
+    <wsdl:part name="do_guestconnect" type="s:string" />
+    <wsdl:part name="sku_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionKeyHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeLicenseHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="license" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeLicenseHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="AddHighAvailabilyHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="HighAvailability" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHighAvailabilyHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="ProcessQuickConnectHttpPostIn">
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="custName" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userCount" type="s:string" />
+    <wsdl:part name="expiryDate" type="s:string" />
+    <wsdl:part name="Action" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessQuickConnectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPolicyManagerHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="DoPolicy" type="s:string" />
+    <wsdl:part name="PolicyUserCount" type="s:string" />
+    <wsdl:part name="PolicyType" type="s:string" />
+    <wsdl:part name="PolicyVersion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPolicyManagerHttpPostOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="AddQuickConnectHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="DoQuickConnect" type="s:string" />
+    <wsdl:part name="QuickConnectCount" type="s:string" />
+    <wsdl:part name="QuickConnectType" type="s:string" />
+    <wsdl:part name="QuickConnectExpiry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddQuickConnectHttpPostOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="AddOnBoardLicenseHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="OnBoardLicense" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOnBoardLicenseHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="DeserializeResultHttpPostIn" />
+  <wsdl:message name="DeserializeResultHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAdvertisingHttpPostIn">
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="advertising_plugin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAdvertisingHttpPostOut">
+    <wsdl:part name="Body" element="tns:AmigopodXML" />
+  </wsdl:message>
+  <wsdl:message name="AddAvendaLicenseHttpPostIn">
+    <wsdl:part name="cust_id" type="s:string" />
+    <wsdl:part name="avenda_sku" type="s:string" />
+    <wsdl:part name="productName" type="s:string" />
+    <wsdl:part name="sku_id" type="s:string" />
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="productVersion" type="s:string" />
+    <wsdl:part name="productSKU" type="s:string" />
+    <wsdl:part name="numUsers" type="s:string" />
+    <wsdl:part name="licenseType" type="s:string" />
+    <wsdl:part name="numYears" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAvendaLicenseHttpPostOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:message name="EditAvendaLicenseHttpPostIn">
+    <wsdl:part name="cust_id" type="s:string" />
+    <wsdl:part name="orig_sku" type="s:string" />
+    <wsdl:part name="avenda_sku" type="s:string" />
+    <wsdl:part name="productName" type="s:string" />
+    <wsdl:part name="sku_id" type="s:string" />
+    <wsdl:part name="regenerate" type="s:string" />
+    <wsdl:part name="subscription" type="s:string" />
+    <wsdl:part name="productVersion" type="s:string" />
+    <wsdl:part name="productSKU" type="s:string" />
+    <wsdl:part name="numUsers_add" type="s:string" />
+    <wsdl:part name="licenseType" type="s:string" />
+    <wsdl:part name="numYears" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditAvendaLicenseHttpPostOut">
+    <wsdl:part name="Body" element="tns:AvendaXML" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="ProcessAmgEval">
+      <wsdl:input message="tns:ProcessAmgEvalSoapIn" />
+      <wsdl:output message="tns:ProcessAmgEvalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <wsdl:input message="tns:ProcessClpEvalSoapIn" />
+      <wsdl:output message="tns:ProcessClpEvalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <wsdl:input message="tns:ProcessSubscriptionSoapIn" />
+      <wsdl:output message="tns:ProcessSubscriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <wsdl:input message="tns:GetSubscriptionKeySoapIn" />
+      <wsdl:output message="tns:GetSubscriptionKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <wsdl:input message="tns:UpgradeLicenseSoapIn" />
+      <wsdl:output message="tns:UpgradeLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <wsdl:input message="tns:AddHighAvailabilySoapIn" />
+      <wsdl:output message="tns:AddHighAvailabilySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <wsdl:input message="tns:ProcessQuickConnectSoapIn" />
+      <wsdl:output message="tns:ProcessQuickConnectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <wsdl:input message="tns:AddPolicyManagerSoapIn" />
+      <wsdl:output message="tns:AddPolicyManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <wsdl:input message="tns:AddQuickConnectSoapIn" />
+      <wsdl:output message="tns:AddQuickConnectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <wsdl:input message="tns:AddOnBoardLicenseSoapIn" />
+      <wsdl:output message="tns:AddOnBoardLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <wsdl:input message="tns:DeserializeResultSoapIn" />
+      <wsdl:output message="tns:DeserializeResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <wsdl:input message="tns:AddAdvertisingSoapIn" />
+      <wsdl:output message="tns:AddAdvertisingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <wsdl:input message="tns:AddAvendaLicenseSoapIn" />
+      <wsdl:output message="tns:AddAvendaLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <wsdl:input message="tns:EditAvendaLicenseSoapIn" />
+      <wsdl:output message="tns:EditAvendaLicenseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="ProcessAmgEval">
+      <wsdl:input message="tns:ProcessAmgEvalHttpGetIn" />
+      <wsdl:output message="tns:ProcessAmgEvalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <wsdl:input message="tns:ProcessClpEvalHttpGetIn" />
+      <wsdl:output message="tns:ProcessClpEvalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <wsdl:input message="tns:ProcessSubscriptionHttpGetIn" />
+      <wsdl:output message="tns:ProcessSubscriptionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <wsdl:input message="tns:GetSubscriptionKeyHttpGetIn" />
+      <wsdl:output message="tns:GetSubscriptionKeyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <wsdl:input message="tns:UpgradeLicenseHttpGetIn" />
+      <wsdl:output message="tns:UpgradeLicenseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <wsdl:input message="tns:AddHighAvailabilyHttpGetIn" />
+      <wsdl:output message="tns:AddHighAvailabilyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <wsdl:input message="tns:ProcessQuickConnectHttpGetIn" />
+      <wsdl:output message="tns:ProcessQuickConnectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <wsdl:input message="tns:AddPolicyManagerHttpGetIn" />
+      <wsdl:output message="tns:AddPolicyManagerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <wsdl:input message="tns:AddQuickConnectHttpGetIn" />
+      <wsdl:output message="tns:AddQuickConnectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <wsdl:input message="tns:AddOnBoardLicenseHttpGetIn" />
+      <wsdl:output message="tns:AddOnBoardLicenseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <wsdl:input message="tns:DeserializeResultHttpGetIn" />
+      <wsdl:output message="tns:DeserializeResultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <wsdl:input message="tns:AddAdvertisingHttpGetIn" />
+      <wsdl:output message="tns:AddAdvertisingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <wsdl:input message="tns:AddAvendaLicenseHttpGetIn" />
+      <wsdl:output message="tns:AddAvendaLicenseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <wsdl:input message="tns:EditAvendaLicenseHttpGetIn" />
+      <wsdl:output message="tns:EditAvendaLicenseHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="ProcessAmgEval">
+      <wsdl:input message="tns:ProcessAmgEvalHttpPostIn" />
+      <wsdl:output message="tns:ProcessAmgEvalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <wsdl:input message="tns:ProcessClpEvalHttpPostIn" />
+      <wsdl:output message="tns:ProcessClpEvalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <wsdl:input message="tns:ProcessSubscriptionHttpPostIn" />
+      <wsdl:output message="tns:ProcessSubscriptionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <wsdl:input message="tns:GetSubscriptionKeyHttpPostIn" />
+      <wsdl:output message="tns:GetSubscriptionKeyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <wsdl:input message="tns:UpgradeLicenseHttpPostIn" />
+      <wsdl:output message="tns:UpgradeLicenseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <wsdl:input message="tns:AddHighAvailabilyHttpPostIn" />
+      <wsdl:output message="tns:AddHighAvailabilyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <wsdl:input message="tns:ProcessQuickConnectHttpPostIn" />
+      <wsdl:output message="tns:ProcessQuickConnectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <wsdl:input message="tns:AddPolicyManagerHttpPostIn" />
+      <wsdl:output message="tns:AddPolicyManagerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <wsdl:input message="tns:AddQuickConnectHttpPostIn" />
+      <wsdl:output message="tns:AddQuickConnectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <wsdl:input message="tns:AddOnBoardLicenseHttpPostIn" />
+      <wsdl:output message="tns:AddOnBoardLicenseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <wsdl:input message="tns:DeserializeResultHttpPostIn" />
+      <wsdl:output message="tns:DeserializeResultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <wsdl:input message="tns:AddAdvertisingHttpPostIn" />
+      <wsdl:output message="tns:AddAdvertisingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <wsdl:input message="tns:AddAvendaLicenseHttpPostIn" />
+      <wsdl:output message="tns:AddAvendaLicenseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <wsdl:input message="tns:EditAvendaLicenseHttpPostIn" />
+      <wsdl:output message="tns:EditAvendaLicenseHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessAmgEval">
+      <soap:operation soapAction="AmigopodWS/ProcessAmgEval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <soap:operation soapAction="AmigopodWS/ProcessClpEval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <soap:operation soapAction="AmigopodWS/ProcessSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <soap:operation soapAction="AmigopodWS/GetSubscriptionKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <soap:operation soapAction="AmigopodWS/UpgradeLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <soap:operation soapAction="AmigopodWS/AddHighAvailabily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <soap:operation soapAction="AmigopodWS/ProcessQuickConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <soap:operation soapAction="AmigopodWS/AddPolicyManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <soap:operation soapAction="AmigopodWS/AddQuickConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <soap:operation soapAction="AmigopodWS/AddOnBoardLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <soap:operation soapAction="AmigopodWS/DeserializeResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <soap:operation soapAction="AmigopodWS/AddAdvertising" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <soap:operation soapAction="AmigopodWS/AddAvendaLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <soap:operation soapAction="AmigopodWS/EditAvendaLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessAmgEval">
+      <soap12:operation soapAction="AmigopodWS/ProcessAmgEval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <soap12:operation soapAction="AmigopodWS/ProcessClpEval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <soap12:operation soapAction="AmigopodWS/ProcessSubscription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <soap12:operation soapAction="AmigopodWS/GetSubscriptionKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <soap12:operation soapAction="AmigopodWS/UpgradeLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <soap12:operation soapAction="AmigopodWS/AddHighAvailabily" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <soap12:operation soapAction="AmigopodWS/ProcessQuickConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <soap12:operation soapAction="AmigopodWS/AddPolicyManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <soap12:operation soapAction="AmigopodWS/AddQuickConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <soap12:operation soapAction="AmigopodWS/AddOnBoardLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <soap12:operation soapAction="AmigopodWS/DeserializeResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <soap12:operation soapAction="AmigopodWS/AddAdvertising" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <soap12:operation soapAction="AmigopodWS/AddAvendaLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <soap12:operation soapAction="AmigopodWS/EditAvendaLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ProcessAmgEval">
+      <http:operation location="/ProcessAmgEval" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <http:operation location="/ProcessClpEval" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <http:operation location="/ProcessSubscription" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <http:operation location="/GetSubscriptionKey" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <http:operation location="/UpgradeLicense" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <http:operation location="/AddHighAvailabily" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <http:operation location="/ProcessQuickConnect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <http:operation location="/AddPolicyManager" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <http:operation location="/AddQuickConnect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <http:operation location="/AddOnBoardLicense" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <http:operation location="/DeserializeResult" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <http:operation location="/AddAdvertising" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <http:operation location="/AddAvendaLicense" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <http:operation location="/EditAvendaLicense" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ProcessAmgEval">
+      <http:operation location="/ProcessAmgEval" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessClpEval">
+      <http:operation location="/ProcessClpEval" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSubscription">
+      <http:operation location="/ProcessSubscription" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionKey">
+      <http:operation location="/GetSubscriptionKey" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeLicense">
+      <http:operation location="/UpgradeLicense" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHighAvailabily">
+      <http:operation location="/AddHighAvailabily" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuickConnect">
+      <http:operation location="/ProcessQuickConnect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPolicyManager">
+      <http:operation location="/AddPolicyManager" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuickConnect">
+      <http:operation location="/AddQuickConnect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOnBoardLicense">
+      <http:operation location="/AddOnBoardLicense" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeResult">
+      <http:operation location="/DeserializeResult" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdvertising">
+      <http:operation location="/AddAdvertising" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAvendaLicense">
+      <http:operation location="/AddAvendaLicense" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAvendaLicense">
+      <http:operation location="/EditAvendaLicense" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://iadsvc02/AmgWS/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://iadsvc02/AmgWS/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://iadsvc02/AmgWS/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://iadsvc02/AmgWS/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

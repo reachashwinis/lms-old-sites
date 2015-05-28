@@ -1,0 +1,305 @@
+﻿body 
+{
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	color: #666666;
+	font-size: 8pt;
+	line-height: 12pt;
+	width: 100%;
+	
+}
+
+ A:Active {color: #B0C4DE;text-decoration:italic}
+/*A:Hover {color: #003399;text-decoration:none}*/
+/*A:Link {color: #003399;text-decoration:none} */
+/*A:Visited {color: #666666;}*/
+.icon
+{
+	font-size:x-small;
+	color:Green;
+	
+	}
+
+.lnkButton
+{
+	color:#003399;
+	
+	}
+
+
+.fldSet
+{
+    border:1;
+    border-color:#BBD1E8;
+    vertical-align:top;
+    background:white;
+    width:85%
+}
+
+.tbl
+{
+    border:0;
+    vertical-align:top;
+    background:white;
+}
+
+.div
+{
+width:150px;
+height:150px;
+overflow:scroll;
+}
+
+.lgnd
+{
+    color:Blue;
+    text-align:left;
+    font-style:normal;
+    font-size:8pt;
+    font-weight:bold
+        
+}
+
+.lgndsmall
+{
+    color:Blue;
+    text-align:left;
+    font-style:normal;
+    font-size:8pt;
+        
+}
+
+.fntReq
+{
+    color:Red;
+    font-size:smaller;
+}
+
+.fntReminder
+{
+    color:Black;
+    font-size:smaller;
+}
+
+.ddlist
+{
+  font-size:8pt;
+  font-family:Trebuchet MS;
+ }
+    
+.SearchLbl
+{
+  font-family:Trebuchet MS;
+	font-size:8pt;  
+       
+}
+.lbl
+    {
+        
+		font-style:normal;
+   
+   }
+   .lblBold
+    {
+        
+		font-style:normal;
+		font-weight:bold;        
+		font-family:Trebuchet MS;
+		font-size:8pt;  
+		color:Black;
+  
+   }
+   
+   .lblError
+    {
+        
+		font-style:normal;
+		font-weight:bold; 
+		font-family:Trebuchet MS;
+		font-size:8pt;
+		color:Red;       
+   }
+     
+   .lblSuccess
+    {
+        
+		font-style:normal;
+		font-weight:bold; 
+		font-family:Trebuchet MS;
+		font-size:8pt;
+		color:Green;       
+   }
+   .RowStyle
+   {
+	background-color : #F0F0F0;
+	font-size:8pt;
+	font-family:Trebuchet MS;
+	}
+	
+	.AlternatingRowStyle
+   {
+	background-color:white;
+	font-size:8pt;
+	font-family:Trebuchet MS;
+	}
+	.HeaderStyle
+   {
+	background-color:#E9EAEE;
+	font-size:8pt;
+	font-family:Trebuchet MS;
+	font-weight:normal;
+	/*color:#0033FF;*/
+	color:#003399;
+   }
+	.FooterStyle
+	{
+	/*background-color:#E9EAEE;*/
+	background-color:White;
+	font-size:7pt;
+	font-family:Trebuchet MS;
+	}
+.btn
+{
+	font-family:Trebuchet MS;
+	font-size:8pt;
+	text-align:center;
+	color:#003399;
+	
+}
+	
+	.tdAudit
+	{
+		font-style:italic;
+		font-size:7pt;
+	}
+	
+	.txt
+	{
+	font-family:Trebuchet MS;
+	font-size:8pt;
+	text-align:left;
+	}
+	
+		.txtLogin
+	{
+	font-family:Trebuchet MS;
+	font-size:8pt;
+	text-align:left;
+	width:200px;
+	}
+	
+	.txtSearch
+	{
+	font-family:Trebuchet MS;
+	font-size:8pt;
+	text-align:left;
+	}
+		
+	.inttxt
+	{
+	font-family:Trebuchet MS;
+	font-size:8pt;
+	text-align:right;
+	}
+		
+		
+	.lblHeader
+	{
+		color:Black;
+		font-family:Trebuchet MS;
+		font-style:normal;
+		font-weight:normal;
+		font-size:9pt;
+	}
+	.lblFooter
+	{
+		color:Gray;
+		font-family:Trebuchet MS;
+		font-style:normal;
+		font-weight:normal;
+		font-size:9pt;
+	}
+	
+	.promptSearch
+	{
+		font-family:Trebuchet MS;
+		font-style:italic;
+		font-size:8pt;
+		font-weight:lighter;
+	}	
+	.divAutoComplete
+	{
+		height:250px;
+		overflow:scroll;
+		}
+.innerfldSet
+{
+    border:1;
+    border-color:#93B7DB;
+    vertical-align:top;
+    background:white;
+    width:100%;
+     
+}
+.autoWidthfldSet
+{
+	 border:1;
+    border-color:Gray;
+    vertical-align:top;
+    background:white;
+	}
+	
+.divNotFound
+	{
+		font-family:Trebuchet MS;
+		font-style:normal;
+		font-size:8pt;
+		font-weight:lighter;
+		color:Red;
+	}
+.paging
+{
+	background-color:#E9EAEE;
+	 font-size:8pt;
+	font-family:Trebuchet MS;
+	border-color:#E9EAEE;
+	}	
+	
+	
+	.lblHeaderMenu
+	{
+		color:white;
+		font-family:Trebuchet MS;
+		font-style:normal;
+		font-weight:Bold;
+		font-size:8pt;
+	}
+	.tdView
+	{
+		font-weight:bold;
+		width:9%;
+		/*color:#FCBE76;*/
+		color:#F8981C;
+	}
+	.txtDisable
+	{
+		background-color:#D7D7D7;
+		font-family:Trebuchet MS;
+	font-size:8pt;
+	text-align:left;
+		}
+		
+		.righttxt
+		{
+			font-family:Trebuchet MS;
+			text-align:right;
+			}
+
+.info
+{
+    color:Maroon;
+    text-align:left;
+    font-style:normal;
+    font-size:8pt;
+    font-weight:bold
+        
+}

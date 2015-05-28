@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://iadsvc02/ECSGen/ECSGen.asmx?wsdl" docRef="http://iadsvc02/ECSGen/ECSGen.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://iadsvc02/ECSGen/ECSGen.asmx" xmlns:q1="http://arubanetworks.com/" binding="q1:ECSGeneratorsSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://iadsvc02/ECSGen/ECSGen.asmx" xmlns:q2="http://arubanetworks.com/" binding="q2:ECSGeneratorsSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

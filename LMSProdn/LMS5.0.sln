@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\LMS5.0\", "..\..\..\..\..\..\inetpub\wwwroot\LMS5.0", "{7A80D9C0-A168-41ED-8718-5AE84C3A29F5}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/LMSNew/LMSAruba", PVCEAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		Debug.AspNetCompiler.VirtualPath = "/LMS5.0"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\LMS5.0\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\LMS5.0\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/LMS5.0"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\LMS5.0\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\LMS5.0\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51110"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = ..\\..\\..\\..\\..\\..\\inetpub\\wwwroot\\LMS5.0
+		SccLocalPath1 = C:\\inetpub\\wwwroot\\LMS5.0
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Release|.NET = Release|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A80D9C0-A168-41ED-8718-5AE84C3A29F5}.Debug|.NET.ActiveCfg = Debug|.NET
+		{7A80D9C0-A168-41ED-8718-5AE84C3A29F5}.Debug|.NET.Build.0 = Debug|.NET
+		{7A80D9C0-A168-41ED-8718-5AE84C3A29F5}.Release|.NET.ActiveCfg = Debug|.NET
+		{7A80D9C0-A168-41ED-8718-5AE84C3A29F5}.Release|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="Com.Arubanetworks.IdentityManagementService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="Com.Arubanetworks.IdentityManagementService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="Com.Arubanetworks.IdentityManagementService">
+      <s:element name="RegisterUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterUserResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IdentityManagementResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ActionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActionMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SecurityInfo" type="tns:SecurityInfo" />
+      <s:complexType name="SecurityInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RegisterUserWithPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterUserWithPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterUserWithPwdResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorizeUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizeUserResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivateAccountResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewEmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsUserValidResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRelationshipStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Enable" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelationshipType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRelationshipStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRelationshipStatusResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivateUserResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLastLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceProvider" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LoginDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="LoginStatus" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLastLoginResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult" type="tns:ADUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ADUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLine3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAccountActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelationShip" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetPasswordResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdminResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdminResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdminResetPasswordResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResendActivationNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResendActivationNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResendActivationNotificationResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MigrateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressLine3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityGroups" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PasswordNeverExpires" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MigrateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MigrateUserResult" type="tns:UploadResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IdentityManagementResult">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateEmailAddressByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmailAddressByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEmailAddressByUserIDResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAthenaData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAthenaDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAthenaDataResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAthenaData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValueArray" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAthenaDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAthenaDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StringEncrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AlgorithmType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionVector" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValueToEncrypt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StringEncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringEncryptResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StringDecrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AlgorithmType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptionVector" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValueToDecrypt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StringDecryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringDecryptResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidatePasswordResult" type="tns:IdentityManagementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserWithPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterUserWithPwd" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserWithPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterUserWithPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserWithPwdSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthorizeUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorizeUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorizeUserSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="ActivateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateAccount" />
+  </wsdl:message>
+  <wsdl:message name="ActivateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateAccountSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IsUserValidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserValid" />
+  </wsdl:message>
+  <wsdl:message name="IsUserValidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserValidSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRelationshipStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRelationshipStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRelationshipStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRelationshipStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRelationshipStatusSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateUser" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUserSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLastLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLastLogin" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLastLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLastLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLastLoginSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="AdminResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:AdminResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="AdminResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:AdminResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminResetPasswordSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="ResendActivationNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:ResendActivationNotification" />
+  </wsdl:message>
+  <wsdl:message name="ResendActivationNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:ResendActivationNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResendActivationNotificationSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="MigrateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:MigrateUser" />
+  </wsdl:message>
+  <wsdl:message name="MigrateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:MigrateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="MigrateUserSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmailAddressByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmailAddressByUserID" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmailAddressByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmailAddressByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmailAddressByUserIDSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAthenaDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAthenaData" />
+  </wsdl:message>
+  <wsdl:message name="GetAthenaDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAthenaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAthenaDataSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAthenaDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAthenaData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAthenaDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAthenaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAthenaDataSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="StringEncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:StringEncrypt" />
+  </wsdl:message>
+  <wsdl:message name="StringEncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:StringEncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="StringEncryptSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="StringDecryptSoapIn">
+    <wsdl:part name="parameters" element="tns:StringDecrypt" />
+  </wsdl:message>
+  <wsdl:message name="StringDecryptSoapOut">
+    <wsdl:part name="parameters" element="tns:StringDecryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="StringDecryptSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePassword" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordSecurityInfo">
+    <wsdl:part name="SecurityInfo" element="tns:SecurityInfo" />
+  </wsdl:message>
+  <wsdl:portType name="IdentitymanagementServiceSoap">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserSoapIn" />
+      <wsdl:output message="tns:RegisterUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserWithPwd">
+      <wsdl:input message="tns:RegisterUserWithPwdSoapIn" />
+      <wsdl:output message="tns:RegisterUserWithPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUser">
+      <wsdl:input message="tns:AuthorizeUserSoapIn" />
+      <wsdl:output message="tns:AuthorizeUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAccount">
+      <wsdl:input message="tns:ActivateAccountSoapIn" />
+      <wsdl:output message="tns:ActivateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input message="tns:UpdateUserSoapIn" />
+      <wsdl:output message="tns:UpdateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserValid">
+      <wsdl:input message="tns:IsUserValidSoapIn" />
+      <wsdl:output message="tns:IsUserValidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelationshipStatus">
+      <wsdl:input message="tns:UpdateRelationshipStatusSoapIn" />
+      <wsdl:output message="tns:UpdateRelationshipStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUser">
+      <wsdl:input message="tns:ActivateUserSoapIn" />
+      <wsdl:output message="tns:ActivateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastLogin">
+      <wsdl:input message="tns:UpdateLastLoginSoapIn" />
+      <wsdl:output message="tns:UpdateLastLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input message="tns:ResetPasswordSoapIn" />
+      <wsdl:output message="tns:ResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminResetPassword">
+      <wsdl:input message="tns:AdminResetPasswordSoapIn" />
+      <wsdl:output message="tns:AdminResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendActivationNotification">
+      <wsdl:input message="tns:ResendActivationNotificationSoapIn" />
+      <wsdl:output message="tns:ResendActivationNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MigrateUser">
+      <wsdl:input message="tns:MigrateUserSoapIn" />
+      <wsdl:output message="tns:MigrateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmailAddressByUserID">
+      <wsdl:input message="tns:UpdateEmailAddressByUserIDSoapIn" />
+      <wsdl:output message="tns:UpdateEmailAddressByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAthenaData">
+      <wsdl:input message="tns:GetAthenaDataSoapIn" />
+      <wsdl:output message="tns:GetAthenaDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAthenaData">
+      <wsdl:input message="tns:UpdateAthenaDataSoapIn" />
+      <wsdl:output message="tns:UpdateAthenaDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StringEncrypt">
+      <wsdl:input message="tns:StringEncryptSoapIn" />
+      <wsdl:output message="tns:StringEncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StringDecrypt">
+      <wsdl:input message="tns:StringDecryptSoapIn" />
+      <wsdl:output message="tns:StringDecryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <wsdl:input message="tns:ValidatePasswordSoapIn" />
+      <wsdl:output message="tns:ValidatePasswordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IdentitymanagementServiceSoap" type="tns:IdentitymanagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegisterUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserWithPwd">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/RegisterUserWithPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegisterUserWithPwdSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUser">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/AuthorizeUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AuthorizeUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAccount">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/ActivateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ActivateAccountSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserValid">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/IsUserValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsUserValidSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelationshipStatus">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateRelationshipStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateRelationshipStatusSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUser">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/ActivateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ActivateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastLogin">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateLastLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateLastLoginSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUserInfoSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResetPasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminResetPassword">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/AdminResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AdminResetPasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResendActivationNotification">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/ResendActivationNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResendActivationNotificationSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangePasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MigrateUser">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/MigrateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MigrateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmailAddressByUserID">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateEmailAddressByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateEmailAddressByUserIDSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AuthenticateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAthenaData">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/GetAthenaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAthenaDataSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAthenaData">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateAthenaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateAthenaDataSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StringEncrypt">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/StringEncrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StringEncryptSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StringDecrypt">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/StringDecrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StringDecryptSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <soap:operation soapAction="Com.Arubanetworks.IdentityManagementService/ValidatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidatePasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IdentitymanagementServiceSoap12" type="tns:IdentitymanagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUser">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegisterUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserWithPwd">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/RegisterUserWithPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegisterUserWithPwdSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUser">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/AuthorizeUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AuthorizeUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAccount">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/ActivateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ActivateAccountSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserValid">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/IsUserValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsUserValidSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelationshipStatus">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateRelationshipStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateRelationshipStatusSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUser">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/ActivateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ActivateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastLogin">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateLastLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateLastLoginSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUserInfoSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ResetPasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminResetPassword">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/AdminResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AdminResetPasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResendActivationNotification">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/ResendActivationNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ResendActivationNotificationSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangePasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MigrateUser">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/MigrateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MigrateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmailAddressByUserID">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateEmailAddressByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateEmailAddressByUserIDSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AuthenticateUserSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAthenaData">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/GetAthenaData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAthenaDataSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAthenaData">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/UpdateAthenaData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateAthenaDataSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StringEncrypt">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/StringEncrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StringEncryptSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StringDecrypt">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/StringDecrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StringDecryptSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <soap12:operation soapAction="Com.Arubanetworks.IdentityManagementService/ValidatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidatePasswordSecurityInfo" part="SecurityInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IdentitymanagementService">
+    <wsdl:port name="IdentitymanagementServiceSoap" binding="tns:IdentitymanagementServiceSoap">
+      <soap:address location="https://dev-ssows.arubanetworks.com/DEV/IdentityManagementService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IdentitymanagementServiceSoap12" binding="tns:IdentitymanagementServiceSoap12">
+      <soap12:address location="https://dev-ssows.arubanetworks.com/DEV/IdentityManagementService/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

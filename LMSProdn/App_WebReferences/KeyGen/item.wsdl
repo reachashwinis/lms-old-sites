@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsdl.arubanetworks.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://wsdl.arubanetworks.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://wsdl.arubanetworks.com">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="ComplexType1">
+        <xsd:all>
+          <xsd:element name="authname" type="xsd:string" />
+          <xsd:element name="authpass" type="xsd:string" />
+          <xsd:element name="brand" type="xsd:string" />
+          <xsd:element name="cert" type="xsd:string" />
+          <xsd:element name="fru" type="xsd:string" />
+          <xsd:element name="who" type="xsd:string" />
+          <xsd:element name="acctid" type="xsd:string" />
+          <xsd:element name="activationcode" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ComplexType2">
+        <xsd:all>
+          <xsd:element name="errtype" type="xsd:string" />
+          <xsd:element name="errmsg" type="xsd:string" />
+          <xsd:element name="result" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getPartIDRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="getPartIDResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="decodeCertRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="decodeCertResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getActIDRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="getActIDResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="genActKeyRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="genActKeyResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="keyfactoryRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="keyfactoryResponse">
+    <wsdl:part name="return" type="tns:ComplexType2" />
+  </wsdl:message>
+  <wsdl:message name="getCertRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="getCertResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isValidEmailRequest">
+    <wsdl:part name="dataIn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="isValidEmailResponse">
+    <wsdl:part name="return" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="decodeActivationRequest">
+    <wsdl:part name="dataIn" type="tns:ComplexType1" />
+  </wsdl:message>
+  <wsdl:message name="decodeActivationResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="ArubaLicensingPortType">
+    <wsdl:operation name="getPartID">
+      <wsdl:input message="tns:getPartIDRequest" />
+      <wsdl:output message="tns:getPartIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="decodeCert">
+      <wsdl:input message="tns:decodeCertRequest" />
+      <wsdl:output message="tns:decodeCertResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getActID">
+      <wsdl:input message="tns:getActIDRequest" />
+      <wsdl:output message="tns:getActIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="genActKey">
+      <wsdl:input message="tns:genActKeyRequest" />
+      <wsdl:output message="tns:genActKeyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="keyfactory">
+      <wsdl:input message="tns:keyfactoryRequest" />
+      <wsdl:output message="tns:keyfactoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCert">
+      <wsdl:input message="tns:getCertRequest" />
+      <wsdl:output message="tns:getCertResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginRequest" />
+      <wsdl:output message="tns:loginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidEmail">
+      <wsdl:input message="tns:isValidEmailRequest" />
+      <wsdl:output message="tns:isValidEmailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="decodeActivation">
+      <wsdl:input message="tns:decodeActivationRequest" />
+      <wsdl:output message="tns:decodeActivationResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArubaLicensingBinding" type="tns:ArubaLicensingPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getPartID">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//getPartID" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decodeCert">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//decodeCert" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActID">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//getActID" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genActKey">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//genActKey" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="keyfactory">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//keyfactory" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCert">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//getCert" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//login" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidEmail">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//isValidEmail" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decodeActivation">
+      <soap:operation soapAction="http://wsdl.arubanetworks.com/ArubaWSTest.php//decodeActivation" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://wsdl.arubanetworks.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArubaLicensing">
+    <wsdl:port name="ArubaLicensingPort" binding="tns:ArubaLicensingBinding">
+      <soap:address location="http://wsdl.arubanetworks.com/ArubaWSTest.php/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

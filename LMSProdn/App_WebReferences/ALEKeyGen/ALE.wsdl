@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="ALEWS" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="ALEWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="ALEWS">
+      <s:element name="GetCertificate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Brand" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertificateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCertificateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivationKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Package" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganisationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAdd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivationKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivationKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEvalKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganisationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEvalKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEvalKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCertificateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCertificate" />
+  </wsdl:message>
+  <wsdl:message name="GetCertificateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCertificateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivationKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivationKey" />
+  </wsdl:message>
+  <wsdl:message name="GetActivationKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivationKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEvalKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetEvalKey" />
+  </wsdl:message>
+  <wsdl:message name="GetEvalKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetEvalKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ALESoap">
+    <wsdl:operation name="GetCertificate">
+      <wsdl:input message="tns:GetCertificateSoapIn" />
+      <wsdl:output message="tns:GetCertificateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivationKey">
+      <wsdl:input message="tns:GetActivationKeySoapIn" />
+      <wsdl:output message="tns:GetActivationKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEvalKey">
+      <wsdl:input message="tns:GetEvalKeySoapIn" />
+      <wsdl:output message="tns:GetEvalKeySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ALESoap" type="tns:ALESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCertificate">
+      <soap:operation soapAction="ALEWS/GetCertificate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivationKey">
+      <soap:operation soapAction="ALEWS/GetActivationKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvalKey">
+      <soap:operation soapAction="ALEWS/GetEvalKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ALESoap12" type="tns:ALESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCertificate">
+      <soap12:operation soapAction="ALEWS/GetCertificate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivationKey">
+      <soap12:operation soapAction="ALEWS/GetActivationKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvalKey">
+      <soap12:operation soapAction="ALEWS/GetEvalKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ALE">
+    <wsdl:port name="ALESoap" binding="tns:ALESoap">
+      <soap:address location="http://iadsvc02/ALEWS/ALE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ALESoap12" binding="tns:ALESoap12">
+      <soap12:address location="http://iadsvc02/ALEWS/ALE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

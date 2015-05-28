@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arubanetworks.com/RFPKeyGen" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://arubanetworks.com/RFPKeyGen" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://arubanetworks.com/RFPKeyGen">
+      <s:element name="genKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objInputData" type="tns:ComplexType1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ComplexType1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="authname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="authpass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="brand" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cert" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fru" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="who" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="acctid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="genKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genKeyResult" type="tns:ComplexType2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ComplexType2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errmsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="genKeyTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="incert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="genKeyTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genKeyTestResult" type="tns:ComplexType2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComplexType2" nillable="true" type="tns:ComplexType2" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="genKeySoapIn">
+    <wsdl:part name="parameters" element="tns:genKey" />
+  </wsdl:message>
+  <wsdl:message name="genKeySoapOut">
+    <wsdl:part name="parameters" element="tns:genKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="genKeyTestSoapIn">
+    <wsdl:part name="parameters" element="tns:genKeyTest" />
+  </wsdl:message>
+  <wsdl:message name="genKeyTestSoapOut">
+    <wsdl:part name="parameters" element="tns:genKeyTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="genKeyTestHttpGetIn">
+    <wsdl:part name="incert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="genKeyTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:ComplexType2" />
+  </wsdl:message>
+  <wsdl:message name="genKeyTestHttpPostIn">
+    <wsdl:part name="incert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="genKeyTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:ComplexType2" />
+  </wsdl:message>
+  <wsdl:portType name="NetChemSoap">
+    <wsdl:operation name="genKey">
+      <wsdl:input message="tns:genKeySoapIn" />
+      <wsdl:output message="tns:genKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="genKeyTest">
+      <wsdl:input message="tns:genKeyTestSoapIn" />
+      <wsdl:output message="tns:genKeyTestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NetChemHttpGet">
+    <wsdl:operation name="genKeyTest">
+      <wsdl:input message="tns:genKeyTestHttpGetIn" />
+      <wsdl:output message="tns:genKeyTestHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NetChemHttpPost">
+    <wsdl:operation name="genKeyTest">
+      <wsdl:input message="tns:genKeyTestHttpPostIn" />
+      <wsdl:output message="tns:genKeyTestHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetChemSoap" type="tns:NetChemSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="genKey">
+      <soap:operation soapAction="http://arubanetworks.com/RFPKeyGen/genKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genKeyTest">
+      <soap:operation soapAction="http://arubanetworks.com/RFPKeyGen/genKeyTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetChemSoap12" type="tns:NetChemSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="genKey">
+      <soap12:operation soapAction="http://arubanetworks.com/RFPKeyGen/genKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genKeyTest">
+      <soap12:operation soapAction="http://arubanetworks.com/RFPKeyGen/genKeyTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetChemHttpGet" type="tns:NetChemHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="genKeyTest">
+      <http:operation location="/genKeyTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetChemHttpPost" type="tns:NetChemHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="genKeyTest">
+      <http:operation location="/genKeyTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetChem">
+    <wsdl:port name="NetChemSoap" binding="tns:NetChemSoap">
+      <soap:address location="http://iadsvc02/RFPGenKey/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NetChemSoap12" binding="tns:NetChemSoap12">
+      <soap12:address location="http://iadsvc02/RFPGenKey/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NetChemHttpGet" binding="tns:NetChemHttpGet">
+      <http:address location="http://iadsvc02/RFPGenKey/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NetChemHttpPost" binding="tns:NetChemHttpPost">
+      <http:address location="http://iadsvc02/RFPGenKey/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

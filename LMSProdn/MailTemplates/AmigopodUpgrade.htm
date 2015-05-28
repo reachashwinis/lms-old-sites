@@ -1,0 +1,177 @@
+<html>
+<head>
+   <style type="text/css">
+        body {font-family: Tahoma, Courier New, Times New Roman; font-size: 10pt}
+        p.MsoNormal
+	    {
+	        margin-bottom:0in;
+	        margin-bottom:.0001pt;
+	        line-height:normal;
+	        text-autospace:none;
+	        font-size:10.0pt;
+	        font-family:"Calibri","sans-serif";
+	    }
+	    p.MsoHead
+	    {
+	        margin-bottom:0in;
+	        margin-bottom:.0001pt;
+	        line-height:normal;
+	        text-autospace:none;
+	        font-size:12.0pt;
+	        font-family:"Calibri","sans-serif";
+	    }
+    </style>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td style="font-family:Tahoma; font-size: 12pt">
+                <b>Aruba ClearPass Account Details: ##UserName## - Sales Order: ##SALESORDER##</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               ##UserName##,
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+                Thank you for choosing the <b>Aruba ClearPass</b> Visitor Management Appliance.
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+                Your subscription is upgraded sucessfully.                
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+                Use the process described in this section to install a new Amigopod skin that you have ordered.
+                <p>You will require administrator access to the Amigopod appliance.</p>
+
+                <p>To check for new plugin updates, navigate to <b>Administrator &gt; Plugin Manager &gt; Check For Updates</b> .
+                You will be prompted with a list of new plugins available. Click the
+                Finish button to install the plugin updates.</p>
+
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td style="width:30%"><b>Subscription ID</b></td>
+                        <td style="width:5%">:</td>
+                        <td>##SUBSCRIPTIONID##</td>
+                    </tr>
+                    <tr>
+                        <td style="width:30%"><b>Cert ID</b></td>
+                        <td style="width:5%">:</td>
+                        <td>##CertId##</td>
+                    </tr>
+                    <tr>
+                        <td style="width:30%"><b>Amigopod Upgrade Part Desc</b></td>
+                        <td style="width:5%">:</td>
+                        <td>##PartId##</td>
+                    </tr>
+                    <tr>
+                        <td><b>Sales Order</b></td>
+                        <td>:</td>
+                        <td>##SALESORDER##</td>
+                    </tr>
+                    <tr>
+                        <td><b>Purchase Order</b></td>
+                        <td>:</td>
+                        <td>##PURCHASEORDER##</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+                <div class="WordSection1">
+                    <p class="MsoNormal">
+                        <span lang="EN" style='font-size: 19.0pt; color: #EA8400'>&nbsp;</span></p>
+                    <p class="MsoNormal">
+                        <span lang="EN" style='font-size: 15.0pt; color: #EA8400'>Troubleshooting</span></p>
+                    <p class="MsoHead">
+                        High Availability</p>
+                    <p class="MsoNormal">
+                        All plugin updates within a High Availability deployment require High Availability
+                        to be disabled,using the Destroy Cluster action.You will not be able to install
+                        plugin updates until High Availability is off. Once the plugins are installed, High
+                        Availability can be re-configured as usual.</p>
+                    <p class="MsoHead">
+                        No Subscription</p>
+                    <p class="MsoNormal">
+                        If you receive the error: <span style='color: #CD0000'>No Subscription ID was supplied.
+                            To find new plugins, you must provide your Subscription ID in the application configuration</span><span
+                                style='color: black'>, please ensure your Subscription ID has been properly added
+                                in the Manage Subscriptions section</span></p>
+                    <p class="MsoHead">
+                        Invalid Subscription</p>
+                    <p class="MsoNormal">
+                        If you receive the error: <span lang="EN" style='color: #CD0000'>No valid subscription
+                            ID</span>, the Subscription ID entered is wrong. Please refer to the licensing
+                        documents you received and ensure it was typed correctly.</p>
+                    <p class="MsoHead">
+                        Expired Subscription</p>
+                    <p class="MsoNormal">
+                        If you receive the error: <span lang="EN" style='color: #CD0000'>Your subscription has
+                            expired, so you can no longer receive updates.Please contact your reseller to renew
+                            your subscription</span>, the subscription has expired. Please contact<span lang="EN"
+                                style='color: blue'>support@arubanetworks.com</span>
+                    </p>
+                    <p class="MsoHead">
+                        Networking Errors</p>
+                    <p class="MsoNormal">
+                        If you receive the error: <span style='color: #CD0000'>Plugin query list failed with
+                            XMLRPC error: CURL Error 7: couldn't connect to host</span>, or a related networking
+                        issue, confirm the Amigopod server is properly connected to the internet.</p>
+                    <p class="MsoNormal">
+                        Diagnostic utilities are available at Administrator &gt; Network Setup &gt; Network
+                        Diagnostics. The subscription server is currently hosted at <a href="http://www.amigopod.com/">
+                            <span style='color: blue'>http://www.amigopod.com</span></a>. Please contact
+                        <span lang="EN" style='color: blue'>support@arubanetworks.com </span>if you cannot
+                        resolve the problem.</p>
+                    <p class="MsoHead">
+                        No Skin Available</p>
+                    <p class="MsoNormal">
+                        If you receive the message: <span lang="EN" style='color: #CD0000'>New Plugins: 0 There
+                            are no new plugins available for installation at this time</span>, please ensure
+                        the Subscription ID matches that submitted with your skin request. If you are unsure,
+                        contact <span lang="EN" style='color: blue'>support@arubanetworks.com</span>.</p>
+                </div>
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+               Thank you once again for choosing <b>Aruba ClearPass</b> solutions and please do not hesitate in contacting your local Aruba Networks partner or Aruba Networks <a href="mailto:support@amigopod.com">support</a> if you have any questions during your installation.
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+               Kind Regards,
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+               The Aruba Networks team
+            </td>
+        </tr>
+        <tr><td style="height:20px"><br /></td></tr>
+        <tr>
+            <td>
+               <a href="http://www.arubanetworks.com">http://www.arubanetworks.com</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arubanetworks.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://arubanetworks.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://arubanetworks.com/">
+      <s:element name="certgen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="partid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="requestor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="certgenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="certgenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeToEngWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="partid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="who" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeToEngWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="writeToEngWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSessionIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="certgenSoapIn">
+    <wsdl:part name="parameters" element="tns:certgen" />
+  </wsdl:message>
+  <wsdl:message name="certgenSoapOut">
+    <wsdl:part name="parameters" element="tns:certgenResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeToEngWebSoapIn">
+    <wsdl:part name="parameters" element="tns:writeToEngWeb" />
+  </wsdl:message>
+  <wsdl:message name="writeToEngWebSoapOut">
+    <wsdl:part name="parameters" element="tns:writeToEngWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getSessionID" />
+  </wsdl:message>
+  <wsdl:message name="getSessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getSessionIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ECSGeneratorsSoap">
+    <wsdl:operation name="certgen">
+      <wsdl:input message="tns:certgenSoapIn" />
+      <wsdl:output message="tns:certgenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeToEngWeb">
+      <wsdl:input message="tns:writeToEngWebSoapIn" />
+      <wsdl:output message="tns:writeToEngWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSessionID">
+      <wsdl:input message="tns:getSessionIDSoapIn" />
+      <wsdl:output message="tns:getSessionIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ECSGeneratorsSoap" type="tns:ECSGeneratorsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="certgen">
+      <soap:operation soapAction="http://arubanetworks.com/certgen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeToEngWeb">
+      <soap:operation soapAction="http://arubanetworks.com/writeToEngWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionID">
+      <soap:operation soapAction="http://arubanetworks.com/getSessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ECSGeneratorsSoap12" type="tns:ECSGeneratorsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="certgen">
+      <soap12:operation soapAction="http://arubanetworks.com/certgen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeToEngWeb">
+      <soap12:operation soapAction="http://arubanetworks.com/writeToEngWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionID">
+      <soap12:operation soapAction="http://arubanetworks.com/getSessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ECSGenerators">
+    <wsdl:port name="ECSGeneratorsSoap" binding="tns:ECSGeneratorsSoap">
+      <soap:address location="http://iadsvc02/ECSGen/ECSGen.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ECSGeneratorsSoap12" binding="tns:ECSGeneratorsSoap12">
+      <soap12:address location="http://iadsvc02/ECSGen/ECSGen.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
